@@ -14,6 +14,15 @@
 		<maven.compiler.target>17</maven.compiler.target>
 		<aws.java.sdk.version>2.20.2</aws.java.sdk.version>
 	</properties>
+	
+	<distributionManagement>
+		<repository>
+			<id>ddd</id>
+			<name>xxx</name>
+			<url>https://xxx.d.codeartifact.us-west-1.amazonaws.com/maven/my-xxx-zzz/</url>
+		</repository>
+	</distributionManagement>
+	
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/s3 -->
 		<dependency>
@@ -54,6 +63,18 @@
 				<configuration>
 					<source>17</source>
 					<target>17</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>demo.BasicProcessor</mainClass>
+						</manifest>
+					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
