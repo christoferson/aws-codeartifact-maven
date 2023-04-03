@@ -4,7 +4,7 @@
 
 	<groupId>com.demo</groupId>
 	<artifactId>aws-codeartifact-maven</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.2</version>
 	<name>aws-codeartifact-maven</name>
 	<description>AWS CodeArtifact - Maven</description>
 	<properties>
@@ -17,13 +17,20 @@
 	
 	<distributionManagement>
 		<repository>
-			<id>ddd</id>
-			<name>xxx</name>
-			<url>https://xxx.d.codeartifact.us-west-1.amazonaws.com/maven/my-xxx-zzz/</url>
+			<id>my-codeartifact-domain-my-repository-maven</id>
+			<name>my-codeartifact-domain-my-repository-maven</name>
+			<url>https://foo.d.codeartifact.us-west-1.amazonaws.com/maven/bar/</url>
 		</repository>
 	</distributionManagement>
 	
 	<dependencies>
+	
+		<dependency>
+			<groupId>com.demo</groupId>
+			<artifactId>aws-codeartifact-maven-lib</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	
 		<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/s3 -->
 		<dependency>
 			<groupId>software.amazon.awssdk</groupId>
@@ -72,7 +79,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>demo.BasicProcessor</mainClass>
+							<mainClass>demo.CodeArtifactImportLib</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

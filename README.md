@@ -4,23 +4,21 @@ AWS CodeArtifact Maven
 You need to build library project first:
 [aws-codeartifact-maven-lib](https://github.com/christoferson/aws-codeartifact-maven-lib)
 
+Note pom contains dependency to lib project
+
+```
+<dependencies>
+	<dependency>
+		<groupId>com.demo</groupId>
+		<artifactId>aws-codeartifact-maven-lib</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+</dependencies>
+```
+
+
+
 ## Pull (Windows)
-
-TODO
-
-## Push (Windows)
-
-### Step 3: Add this distribution management configuration to your pom.xml
-
-```
-<distributionManagement>
-  <repository>
-    <id>my-codeartifact-domain-my-repository-maven</id>
-    <name>my-codeartifact-domain-my-repository-maven</name>
-    <url>https://xxx.d.codeartifact.us-west-1.amazonaws.com/maven/my-repository-maven/</url>
-  </repository>
-</distributionManagement>
-```
 
 ### Set the CodeArtificat Authorization Token to Env Variable CODEARTIFACT_TOKEN
 
